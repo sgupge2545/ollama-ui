@@ -230,7 +230,7 @@ async function submitRequest() {
           if (responseDiv.hidden_text == undefined){
             responseDiv.hidden_text = "";
           }
-          word = word.replace(/<think>/g, '<div>think:<br><span style="color:gray;">').replace(/<\/think>/g, '</span><hr></div>');
+          word = word.replace(/<think>/g, '<details open><summary>think content</summary><br><span style="color:gray;">').replace(/<\/think>/g, '</span><hr></details>');
           responseDiv.hidden_text += word;
           responseDiv.innerHTML = DOMPurify.sanitize(marked.parse(responseDiv.hidden_text)); // Append word to response container
         }
